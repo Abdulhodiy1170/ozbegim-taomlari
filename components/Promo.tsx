@@ -20,16 +20,13 @@ export default function Promo() {
             <h2>
               {t.promo.title}
               <span className="promo-big">
-                <b className="gold-text">−{PROMO_PERCENT}%</b> {t.promo.off}
+                <b className="accent-text">−{PROMO_PERCENT}%</b> {t.promo.off}
               </span>
             </h2>
             <p>{t.promo.text}</p>
-            <a href="#menu" className="btn btn-gold" onClick={goPlov}>
+            <a href="#menu" className="btn btn-primary" onClick={goPlov}>
               {t.promo.cta} <Arrow width={18} height={18} />
             </a>
-          </div>
-          <div className="promo-seal" aria-hidden>
-            <span>−{PROMO_PERCENT}%</span>
           </div>
         </div>
       </div>

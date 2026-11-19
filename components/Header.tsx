@@ -47,6 +47,7 @@ export default function Header() {
   }, [open]);
 
   return (
+    <>
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="container header-in">
         <a href="#top" className="brand" aria-label="O'zbegim Taomlari">
@@ -69,7 +70,7 @@ export default function Header() {
           <a href={`tel:${CONTACT.phones[0]}`} className="icon-btn hide-sm" aria-label={CONTACT.phonesPretty[0]}>
             <Phone width={18} height={18} />
           </a>
-          <a href="#booking" className="btn btn-gold btn-sm hide-md">
+          <a href="#booking" className="btn btn-primary btn-sm hide-md">
             {t.book}
           </a>
           <button className="icon-btn burger" onClick={() => setOpen(true)} aria-label="Menu" aria-expanded={open}>
@@ -77,8 +78,10 @@ export default function Header() {
           </button>
         </div>
       </div>
+    </header>
 
-      <div className={`drawer ${open ? "open" : ""}`} aria-hidden={!open}>
+    {/* Header'dan tashqarida: backdrop-filter fixed elementni header o'lchamiga qamab qo'ymasligi uchun */}
+    <div className={`drawer ${open ? "open" : ""}`} aria-hidden={!open}>
         <div className="drawer-backdrop" onClick={() => setOpen(false)} />
         <div className="drawer-panel">
           <button className="icon-btn drawer-close" onClick={() => setOpen(false)} aria-label="Yopish">
@@ -93,7 +96,7 @@ export default function Header() {
             ))}
           </nav>
           <LangSwitch />
-          <a href="#booking" className="btn btn-gold" onClick={() => setOpen(false)}>
+          <a href="#booking" className="btn btn-primary" onClick={() => setOpen(false)}>
             {t.book}
           </a>
           <a href={`tel:${CONTACT.phones[0]}`} className="drawer-phone">
@@ -101,6 +104,6 @@ export default function Header() {
           </a>
         </div>
       </div>
-    </header>
+    </>
   );
 }

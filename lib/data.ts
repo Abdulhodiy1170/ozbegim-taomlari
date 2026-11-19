@@ -6,8 +6,8 @@
 export type Lang = "uz" | "ru";
 export type T = { uz: string; ru: string };
 
-const img = (id: string, w = 1200) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+// Rasmlar public/images papkasida (Unsplash, bepul litsenziya)
+const img = (name: string) => `/images/${name}.jpg`;
 
 export const CONTACT = {
   phones: ["+998995002020", "+998997005050"],
@@ -26,25 +26,88 @@ export const CONTACT = {
   express24: "https://express24.uz/",
 };
 
+const mapQ = (q: string) => ({
+  embed: `https://www.google.com/maps?q=${encodeURIComponent(q)}&z=14&output=embed`,
+  link: `https://maps.google.com/?q=${encodeURIComponent(q)}`,
+});
+
+export type Branch = {
+  id: string;
+  city: T;
+  label: T;
+  address: T;
+  phone: string;
+  phonePretty: string;
+  hours: T;
+  map: { embed: string; link: string };
+};
+
+// Aniq manzillar ma'lum bo'lgach, address va map qiymatlarini almashtiring
+export const BRANCHES: Branch[] = [
+  {
+    id: "margilon",
+    city: { uz: "Marg'ilon", ru: "Маргилан" },
+    label: { uz: "Bosh filial", ru: "Главный филиал" },
+    address: {
+      uz: "Marg'ilon sh., Chevarchilik ko'chasi, 1-Bo'sim ro'parasida",
+      ru: "г. Маргилан, ул. Чеварчилик, напротив 1-Бўсим",
+    },
+    phone: "+998995002020",
+    phonePretty: "+998 99 500 20 20",
+    hours: { uz: "Har kuni, 08:00 — 23:00", ru: "Ежедневно, 08:00 — 23:00" },
+    map: mapQ("40.4717,71.7246"),
+  },
+  {
+    id: "fargona",
+    city: { uz: "Farg'ona", ru: "Фергана" },
+    label: { uz: "Filial", ru: "Филиал" },
+    address: { uz: "Farg'ona sh., shahar markazi", ru: "г. Фергана, центр города" },
+    phone: "+998997005050",
+    phonePretty: "+998 99 700 50 50",
+    hours: { uz: "Har kuni, 08:00 — 23:00", ru: "Ежедневно, 08:00 — 23:00" },
+    map: mapQ("40.3864,71.7864"),
+  },
+  {
+    id: "namangan",
+    city: { uz: "Namangan", ru: "Наманган" },
+    label: { uz: "Filial", ru: "Филиал" },
+    address: { uz: "Namangan sh., shahar markazi", ru: "г. Наманган, центр города" },
+    phone: "+998997005050",
+    phonePretty: "+998 99 700 50 50",
+    hours: { uz: "Har kuni, 08:00 — 23:00", ru: "Ежедневно, 08:00 — 23:00" },
+    map: mapQ("40.9983,71.6726"),
+  },
+  {
+    id: "andijon",
+    city: { uz: "Andijon", ru: "Андижан" },
+    label: { uz: "Filial", ru: "Филиал" },
+    address: { uz: "Andijon sh., shahar markazi", ru: "г. Андижан, центр города" },
+    phone: "+998997005050",
+    phonePretty: "+998 99 700 50 50",
+    hours: { uz: "Har kuni, 08:00 — 23:00", ru: "Ежедневно, 08:00 — 23:00" },
+    map: mapQ("40.7821,72.3442"),
+  },
+];
+
 export const IMAGES = {
-  hero: img("1671048116858-e8ef69175b2d", 1800),
-  plov: img("1671048116663-eda1518a169b"),
-  plovKhiva: img("1793648127020-cd123f31f757"),
-  lagman: img("1671048116404-454fefede763"),
-  manti: img("1616895427217-5318221a3e79"),
-  soup: img("1648726445011-9fbf3a5ddb90"),
-  soup2: img("1630684789391-d59419768fb1"),
-  kebab: img("1783684539282-cc34b91ed983", 1400),
-  shashlik: img("1532636875304-0c89119d9b4d"),
-  interior: img("1709548145082-04d0cde481d4", 1400),
-  interior2: img("1650490632010-e18cbb694dd1"),
-  banquet: img("1763429338698-439aa108e7fb", 1600),
-  banquet2: img("1666617710768-425d2d9088f8"),
-  bread: img("1792582427551-8cc8d9d3ff45"),
-  breads: img("1672478694242-f95b5a4b21ab"),
-  tea: img("1723130028856-782987201bfb"),
-  teapot: img("1756144730025-4832701784a1"),
-  tiles: img("1759518158486-59839bfc01b5"),
+  hero: img("hero"),
+  plov: img("plov"),
+  plovKhiva: img("plov-khiva"),
+  lagman: img("lagman"),
+  manti: img("manti"),
+  soup: img("soup"),
+  soup2: img("soup2"),
+  kebab: img("kebab"),
+  shashlik: img("shashlik"),
+  interior: img("interior"),
+  interior2: img("interior2"),
+  banquet: img("banquet"),
+  banquet2: img("banquet2"),
+  bread: img("bread"),
+  breads: img("breads"),
+  tea: img("tea"),
+  teapot: img("teapot"),
+  tiles: img("tiles"),
 };
 
 export const PROMO_PERCENT = 20;

@@ -11,6 +11,7 @@ import Delivery from "@/components/Delivery";
 import Gallery from "@/components/Gallery";
 import Reviews from "@/components/Reviews";
 import Booking from "@/components/Booking";
+import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
@@ -33,6 +34,7 @@ export default function Home() {
         <Gallery />
         <Reviews />
         <Booking />
+        <Faq />
         <Contact />
       </main>
       <Footer />

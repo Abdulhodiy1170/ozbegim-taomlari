@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useLang } from "./LangContext";
-import { Chef, Divider, Flame, Leaf, Shield } from "./Icons";
+import { Chef, Flame, Leaf, Shield } from "./Icons";
 import { IMAGES } from "@/lib/data";
 
 const ICONS = [Leaf, Flame, Chef, Shield];
@@ -20,14 +20,13 @@ export default function About() {
             <Image src={IMAGES.breads} alt="" fill sizes="240px" />
           </div>
           <div className="about-years">
-            <b className="gold-text">100%</b>
+            <b className="accent-text">100%</b>
             <span>{t.about.features[3].t}</span>
           </div>
         </div>
         <div className="about-copy">
           <span className="eyebrow" data-reveal>{t.about.eyebrow}</span>
           <h2 className="h2" data-reveal>{t.about.title}</h2>
-          <Divider className="left" />
           <p data-reveal>{t.about.p1}</p>
           <p data-reveal>{t.about.p2}</p>
           <ul className="features">

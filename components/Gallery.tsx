@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useLang } from "./LangContext";
-import { Close, Divider } from "./Icons";
+import { Close } from "./Icons";
 import { GALLERY } from "@/lib/data";
 
 export default function Gallery() {
@@ -27,7 +27,6 @@ export default function Gallery() {
         <div className="sec-head" data-reveal>
           <span className="eyebrow">{t.gallery.eyebrow}</span>
           <h2 className="h2">{t.gallery.title}</h2>
-          <Divider />
         </div>
         <div className="gallery">
           {GALLERY.map((g, i) => (
@@ -44,7 +43,7 @@ export default function Gallery() {
             <Close width={24} height={24} />
           </button>
           <div className="lb-img" onClick={(e) => e.stopPropagation()}>
-            <Image src={GALLERY[open].src.replace("w=1200", "w=1800")} alt="" fill sizes="90vw" />
+            <Image src={GALLERY[open].src} alt="" fill sizes="90vw" />
           </div>
         </div>
       )}

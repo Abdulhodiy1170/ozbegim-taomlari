@@ -2,10 +2,10 @@ import type { Lang } from "./data";
 
 export const dict = {
   uz: {
-    nav: { about: "Biz haqimizda", menu: "Menyu", banquet: "Banket", reviews: "Sharhlar", contact: "Aloqa" },
+    nav: { about: "Biz haqimizda", menu: "Menyu", banquet: "Banket", reviews: "Sharhlar", contact: "Filiallar" },
     book: "Stol band qilish",
     hero: {
-      badge: "Marg'ilondagi milliy taomlar oshxonasi",
+      badge: "Farg'ona vodiysidagi milliy taomlar oshxonasi",
       title1: "O'zbegim",
       title2: "Taomlari",
       slogan: "Mazali taom — ko'ngilga malham",
@@ -14,7 +14,7 @@ export const dict = {
       cta2: "Joy band qilish",
       stats: [
         { n: "500", l: "kishilik zal" },
-        { n: "40+", l: "milliy taom" },
+        { n: "4", l: "ta filial" },
         { n: "08–23", l: "har kuni ochiq" },
       ],
     },
@@ -106,9 +106,22 @@ export const dict = {
       okText: "Administratorimiz tez orada siz bilan bog'lanadi. Bron raqamingiz:",
       okClose: "Yaxshi",
     },
+    faq: {
+      eyebrow: "Savol-javob",
+      title: "Ko'p beriladigan savollar",
+      items: [
+        { q: "Stolni qanday band qilaman?", a: "Sahifadagi bron formasini to'ldiring yoki +998 99 500 20 20 raqamiga qo'ng'iroq qiling. Administrator 15 daqiqa ichida tasdiqlaydi." },
+        { q: "Yetkazib berish bormi?", a: "Ha, Express24 ilovasi orqali barcha filiallarimizdan uyingizgacha yetkazib beramiz." },
+        { q: "Qanday to'lov turlari qabul qilinadi?", a: "Naqd pul, Uzcard, Humo, Visa kartalari hamda Click va Payme orqali to'lash mumkin." },
+        { q: "To'y yoki banket uchun oldindan qancha vaqt bron qilish kerak?", a: "Katta tadbirlar uchun kamida 2–3 hafta oldin murojaat qilishni tavsiya qilamiz. Menyu va dizaynni birga kelishamiz." },
+        { q: "Aksiya qaysi taomlarga amal qiladi?", a: "20% chegirma barcha turdagi osh va palovlarga — Toshkent oshi, Samarqand oshi va Choyxona palovga amal qiladi." },
+      ],
+    },
     contact: {
-      eyebrow: "Aloqa",
-      title: "Bizni toping",
+      eyebrow: "Filiallar",
+      title: "Bizning filiallarimiz",
+      text: "Farg'ona vodiysining to'rt shahrida sizni kutamiz. Filialni tanlang — xaritada joylashuvi ko'rinadi.",
+      call: "Qo'ng'iroq",
       address: "Manzil",
       phone: "Telefon",
       hours: "Ish vaqti",
@@ -125,10 +138,10 @@ export const dict = {
     },
   },
   ru: {
-    nav: { about: "О нас", menu: "Меню", banquet: "Банкеты", reviews: "Отзывы", contact: "Контакты" },
+    nav: { about: "О нас", menu: "Меню", banquet: "Банкеты", reviews: "Отзывы", contact: "Филиалы" },
     book: "Забронировать",
     hero: {
-      badge: "Национальная кухня в Маргилане",
+      badge: "Национальная кухня Ферганской долины",
       title1: "O'zbegim",
       title2: "Taomlari",
       slogan: "Вкусная еда — бальзам для души",
@@ -137,7 +150,7 @@ export const dict = {
       cta2: "Забронировать стол",
       stats: [
         { n: "500", l: "мест в зале" },
-        { n: "40+", l: "национальных блюд" },
+        { n: "4", l: "филиала" },
         { n: "08–23", l: "открыты ежедневно" },
       ],
     },
@@ -229,9 +242,22 @@ export const dict = {
       okText: "Администратор скоро свяжется с вами. Номер брони:",
       okClose: "Хорошо",
     },
+    faq: {
+      eyebrow: "Вопросы и ответы",
+      title: "Частые вопросы",
+      items: [
+        { q: "Как забронировать стол?", a: "Заполните форму бронирования на сайте или позвоните по номеру +998 99 500 20 20. Администратор подтвердит в течение 15 минут." },
+        { q: "Есть ли доставка?", a: "Да, мы доставляем из всех филиалов через приложение Express24." },
+        { q: "Какие способы оплаты принимаются?", a: "Наличные, карты Uzcard, Humo, Visa, а также Click и Payme." },
+        { q: "За сколько бронировать свадьбу или банкет?", a: "Для крупных мероприятий рекомендуем обращаться минимум за 2–3 недели. Меню и оформление согласуем вместе." },
+        { q: "На какие блюда действует акция?", a: "Скидка 20% действует на все виды плова — ташкентский, самаркандский и чайханский." },
+      ],
+    },
     contact: {
-      eyebrow: "Контакты",
-      title: "Как нас найти",
+      eyebrow: "Филиалы",
+      title: "Наши филиалы",
+      text: "Ждём вас в четырёх городах Ферганской долины. Выберите филиал — его расположение появится на карте.",
+      call: "Позвонить",
       address: "Адрес",
       phone: "Телефон",
       hours: "Время работы",

@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState, type FormEvent } from "react";
 import { useLang } from "./LangContext";
-import { Check, Divider } from "./Icons";
-import { IMAGES } from "@/lib/data";
+import { Check } from "./Icons";
+
 
 /** +998 (99) 500-20-20 ko'rinishidagi niqob */
 function maskPhone(raw: string) {
@@ -69,14 +68,10 @@ export default function Booking() {
 
   return (
     <section className="section booking" id="booking">
-      <div className="booking-bg">
-        <Image src={IMAGES.banquet2} alt="" fill sizes="100vw" />
-      </div>
       <div className="container booking-in">
         <div className="booking-copy" data-reveal>
           <span className="eyebrow">{f.eyebrow}</span>
           <h2 className="h2">{f.title}</h2>
-          <Divider className="left" />
           <p>{f.text}</p>
         </div>
 
@@ -129,7 +124,7 @@ export default function Booking() {
             <span>{f.comment}</span>
             <textarea rows={3} value={form.comment} onChange={(e) => set("comment", e.target.value)} />
           </label>
-          <button className="btn btn-gold btn-block" disabled={status === "sending"}>
+          <button className="btn btn-primary btn-block" disabled={status === "sending"}>
             {status === "sending" ? <><i className="spinner" /> {f.sending}</> : f.submit}
           </button>
         </form>
@@ -141,8 +136,8 @@ export default function Booking() {
             <span className="ok-ic"><Check width={34} height={34} /></span>
             <h3>{f.okTitle}</h3>
             <p>{f.okText}</p>
-            <b className="code gold-text">{code}</b>
-            <button className="btn btn-gold" onClick={close} autoFocus>{f.okClose}</button>
+            <b className="code accent-text">{code}</b>
+            <button className="btn btn-primary" onClick={close} autoFocus>{f.okClose}</button>
           </div>
         </div>
       )}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useLang } from "./LangContext";
-import { Divider, Quote, Star } from "./Icons";
+import { Quote, Star } from "./Icons";
 import { REVIEWS } from "@/lib/data";
 
 export default function Reviews() {
@@ -12,7 +12,6 @@ export default function Reviews() {
         <div className="sec-head" data-reveal>
           <span className="eyebrow">{t.reviews.eyebrow}</span>
           <h2 className="h2">{t.reviews.title}</h2>
-          <Divider />
           <div className="rating">
             <span className="stars">{[0, 1, 2, 3, 4].map((i) => <Star key={i} width={18} height={18} />)}</span>
             <b>5.0</b>

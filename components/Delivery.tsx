@@ -16,10 +16,10 @@ export default function Delivery() {
             <h2 className="h2">{t.delivery.title}</h2>
             <p>{t.delivery.text}</p>
             <div className="delivery-cta">
-              <a href={CONTACT.express24} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
+              <a href={CONTACT.express24} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 {t.delivery.cta} <Arrow width={18} height={18} />
               </a>
-              <a href={`tel:${CONTACT.phones[0]}`} className="btn btn-ghost">
+              <a href={`tel:${CONTACT.phones[0]}`} className="btn btn-outline">
                 <Phone width={18} height={18} /> {t.delivery.call}
               </a>
             </div>

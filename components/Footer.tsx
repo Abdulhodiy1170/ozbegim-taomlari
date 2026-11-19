@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useLang } from "./LangContext";
 import { Facebook, Instagram, Telegram } from "./Icons";
-import { CONTACT } from "@/lib/data";
+import { BRANCHES, CONTACT } from "@/lib/data";
 
 export default function Footer() {
   const { t, lang } = useLang();
@@ -14,7 +14,6 @@ export default function Footer() {
   ];
   return (
     <footer className="footer">
-      <div className="pattern faint" />
       <div className="container footer-in">
         <div className="f-brand">
           <Image src="/logo.png" alt="O'zbegim Taomlari" width={110} height={110} />
@@ -32,7 +31,9 @@ export default function Footer() {
         <div>
           <h4>{t.nav.contact}</h4>
           <ul>
-            <li>{CONTACT.address[lang]}</li>
+            {BRANCHES.map((b) => (
+              <li key={b.id}><a href="#contact">{b.city[lang]}</a> — {b.label[lang].toLowerCase()}</li>
+            ))}
             {CONTACT.phones.map((p, i) => (
               <li key={p}><a href={`tel:${p}`}>{CONTACT.phonesPretty[i]}</a></li>
             ))}

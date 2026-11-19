@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useLang } from "./LangContext";
-import { Arrow, Briefcase, Cake, Divider, Rings, Users } from "./Icons";
+import { Arrow, Briefcase, Cake, Rings, Users } from "./Icons";
 import { IMAGES } from "@/lib/data";
 
 const ICONS = [Rings, Cake, Briefcase, Users];
@@ -40,7 +40,6 @@ export default function Banquet() {
         <div className="banquet-copy">
           <span className="eyebrow" data-reveal>{t.banquet.eyebrow}</span>
           <h2 className="h2" data-reveal>{t.banquet.title}</h2>
-          <Divider className="left" />
           <p data-reveal>{t.banquet.text}</p>
           <div className="event-types">
             {t.banquet.types.map((x, i) => {
@@ -54,7 +53,7 @@ export default function Banquet() {
               );
             })}
           </div>
-          <a href="#booking" className="btn btn-gold" onClick={pickType} data-reveal>
+          <a href="#booking" className="btn btn-primary" onClick={pickType} data-reveal>
             {t.banquet.cta} <Arrow width={18} height={18} />
           </a>
         </div>
@@ -64,7 +63,7 @@ export default function Banquet() {
             <Image src={IMAGES.banquet} alt="" fill sizes="(max-width: 900px) 100vw, 50vw" />
           </div>
           <div className="bq-cap">
-            <b className="gold-text">
+            <b className="accent-text">
               <Counter to={500} />
             </b>
             <span>{t.banquet.capacity}</span>

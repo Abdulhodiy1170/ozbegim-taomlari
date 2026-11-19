@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useLang } from "./LangContext";
-import { Divider } from "./Icons";
 import { MENU, PROMO_PERCENT, formatPrice, promoPrice } from "@/lib/data";
 
 export default function MenuSection() {
@@ -33,7 +32,6 @@ export default function MenuSection() {
         <div className="sec-head" data-reveal>
           <span className="eyebrow">{t.menu.eyebrow}</span>
           <h2 className="h2">{t.menu.title}</h2>
-          <Divider />
           <p>{t.menu.text}</p>
         </div>
 
@@ -55,7 +53,9 @@ export default function MenuSection() {
 
         <div className="menu-grid" key={cat}>
           <div className="menu-visual">
-            <Image src={current.image} alt={current.name[lang]} fill sizes="(max-width: 900px) 100vw, 40vw" />
+            <div className="menu-visual-img">
+              <Image src={current.image} alt={current.name[lang]} fill sizes="(max-width: 900px) 100vw, 40vw" />
+            </div>
             <div className="menu-visual-cap">
               <small>{current.dishes.length} {lang === "uz" ? "taom" : "блюд"}</small>
               <h3>{current.name[lang]}</h3>
